@@ -174,6 +174,7 @@ class Level(tool.State):
             for sun in self.sun_group:
                 if sun.checkCollision(mouse_pos[0], mouse_pos[1]):
                     self.menubar.increaseSunValue(sun.sun_value)
+                    pg.mixer.Sound.play(sun.sound_effect)
 
         for car in self.cars:
             car.update(self.game_info)

@@ -231,6 +231,7 @@ class Sun(Plant):
         self.dest_x = dest_x
         self.dest_y = dest_y
         self.die_timer = 0
+        self.sound_effect = pg.mixer.Sound("./resources/sound effects/sun.wav")
 
     def handleState(self):
         if self.rect.centerx != self.dest_x:
