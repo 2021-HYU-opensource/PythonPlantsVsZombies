@@ -494,6 +494,8 @@ class PotatoMine(Plant):
         self.bomb_timer = 0
         self.explode_y_range = 0
         self.explode_x_range = c.GRID_X_SIZE//3 * 2
+        #self.mine_sound = pg.mixer.Sound("./resources/sound effects/potato_mine.wav")
+
 
     def loadImages(self, name, scale):
         self.init_frames = []
@@ -530,8 +532,9 @@ class PotatoMine(Plant):
         if self.bomb_timer == 0:
             self.bomb_timer = self.current_time
             self.changeFrames(self.explode_frames)
-        elif (self.current_time - self.bomb_timer) > 500:
+        elif (self.current_time - self.bomb_timer) > 10:
             self.health = 0
+            #self.mine_sound.play()
 
 class Squash(Plant):
     def __init__(self, x, y):
