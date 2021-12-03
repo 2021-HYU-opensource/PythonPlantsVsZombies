@@ -10,7 +10,9 @@ from .. import constants as c
 class Menu(tool.State):
     def __init__(self):
         tool.State.__init__(self)
-    
+        self.sound_effect = pg.mixer.Sound("./resources/sound effects/opening.wav")
+        self.sound_effect.play()
+
     def startup(self, current_time, persist):
         self.next = c.LEVEL
         self.persist = persist
