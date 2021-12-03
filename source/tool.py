@@ -41,6 +41,7 @@ class Control():
         self.state_dict = {}
         self.state_name = None
         self.state = None
+        self.click_sound = pg.mixer.Sound("./resources/sound effects/click.wav")
         self.game_info = {c.CURRENT_TIME:0.0,
                           c.LEVEL_NUM:c.START_LEVEL_NUM}
  
@@ -76,6 +77,7 @@ class Control():
             elif event.type == pg.MOUSEBUTTONDOWN:
                 self.mouse_pos = pg.mouse.get_pos()
                 self.mouse_click[0], _, self.mouse_click[1] = pg.mouse.get_pressed()
+                self.click_sound.play()
                 print('pos:', self.mouse_pos, ' mouse:', self.mouse_click)
 
     def main(self):
